@@ -14,11 +14,10 @@ tableData.forEach(function(data) {
 inputField.on("change", function() {
     var newText = d3.event.target.value;
     var dateFilter = tableData.filter(date => date.datetime === newText);
-    var tbody = d3.select("tbody");
     tbody.html("");
     dateFilter.forEach(function(date) {
         var row = tbody.append("tr");
-        Object.entries(date).forEach(function([key, value]){
+        Object.entries(date).forEach(function([key, value]) {
             var cell = row.append("td");
             cell.text(value); 
         }); 
